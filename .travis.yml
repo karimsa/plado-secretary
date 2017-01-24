@@ -1,0 +1,8 @@
+language: node_js
+node_js:
+  - 6.9.4
+sudo: false
+script:
+ - cd ssl && ./gen.sh && cd ..
+ - scripts/auth.js
+ - npm test && node_modules/.bin/codecov

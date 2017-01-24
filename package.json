@@ -1,0 +1,40 @@
+{
+  "name": "plado-secretary",
+  "version": "0.0.1",
+  "description": "The system that answers and routes calls/SMS for PLADO.",
+  "main": "index.js",
+  "engines": {
+    "node": "6.9.4"
+  },
+  "scripts": {
+    "test": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec -r should",
+    "start": "node -e 'console.log(JSON.stringify(require(\"./config\").pm2))' | node_modules/.bin/pm2 start -",
+    "prestart": "npm run stop",
+    "stop": "node_modules/.bin/pm2 delete secretary || true"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pladoinc/secretary.git"
+  },
+  "author": "PLADO",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pladoinc/secretary/issues"
+  },
+  "homepage": "https://github.com/pladoinc/secretary#readme",
+  "devDependencies": {
+    "istanbul": "^0.4.5",
+    "mocha": "^3.2.0",
+    "should": "^11.1.2",
+    "supertest": "^2.0.1"
+  },
+  "dependencies": {
+    "basic-auth": "^1.1.0",
+    "body-parser": "^1.16.0",
+    "express": "^4.14.0",
+    "pm2": "^2.3.0",
+    "pmx": "^1.0.1",
+    "rc": "^1.1.6",
+    "twilio": "^2.11.1"
+  }
+}

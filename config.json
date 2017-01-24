@@ -1,0 +1,25 @@
+{
+  "mongo": {
+    "db": "unlearn",
+    "host": "localhost",
+    "user": "unlearn",
+    "pass": "unlearn"
+  },
+  "pmx": {
+    "network": true
+  },
+  "metrics": {
+    "currentRequests": {
+      "type": "counter",
+      "name": "Number of active requests"
+    }
+  },
+  "pm2": [
+    {
+      "name": "secretary",
+      "script": "index.js",
+      "instances": "max",
+      "exec_mode": "cluster"
+    }
+  ]
+}
