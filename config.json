@@ -1,4 +1,7 @@
 {
+  "socket.io": {
+    "port": 8080
+  },
   "mongo": {
     "db": "unlearn",
     "host": "localhost",
